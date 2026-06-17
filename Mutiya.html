@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selamat Ulang Tahun Mutiya</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Quicksand', sans-serif;
+    background: url('https://i.postimg.cc/7YF7P79b/1bc632154182835a5ef4f9edf85d1494.jpg') center/cover no-repeat fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    color: #2D2D2D;
+    padding: 20px;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: -1;
+  }
+
+.container {
+    width: 100%;
+    max-width: 380px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 24px;
+    padding: 28px 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    text-align: center;
+    position: relative;
+    min-height: 380px;
+    border: 2px solid #FFD6E7;
+    backdrop-filter: blur(12px);
+  }
+
+  #prank-section {
+    position: relative;
+    min-height: 280px;
+  }
+
+  #prank-text {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #FF5CA8;
+    margin-bottom: 40px;
+    min-height: 28px;
+    transition: all 0.3s ease;
+  }
+
+  #prank-btn {
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+    background: #FF8FAB;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    position: absolute;
+    transition: left 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+                top 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+                transform 0.2s ease;
+    box-shadow: 0 6px 16px rgba(255, 143, 171, 0.4);
+    white-space: nowrap;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
+  #prank-btn:hover {
+    background: #FF5CA8;
+  }
+
+  #prank-btn:active {
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+
+  #gift-section {
+    display: none;
+    animation: zoomIn 0.5s ease;
+    min-height: 280px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #gift-section img {
+    width: 160px;
+    height: auto;
+  }
+
+  @keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  #ucapan-section {
+    display: none;
+    animation: fadeIn 0.8s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+.gif-container {
+    margin-bottom: 20px;
+  }
+
+.gif-container img {
+    width: 120px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(255, 182, 193, 0.3);
+  }
+
+.typing-container {
+    text-align: center;
+    max-width: 100%;
+  }
+
+.line {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    min-height: 1.7em;
+    color: #2D2D2D;
+    font-weight: 600;
+  }
+
+.line.title {
+    font-family: 'Pacifico', cursive;
+    font-size: 2rem;
+    color: #FF5CA8;
+    text-align: center;
+    margin-bottom: 18px;
+    font-weight: 400;
+  }
+
+.cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    background: #FF5CA8;
+    animation: blink 1s infinite;
+    vertical-align: text-bottom;
+    margin-left: 2px;
+  }
+
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+.confetti {
+    position: fixed;
+    width: 7px;
+    height: 7px;
+    background: #FF8FAB;
+    pointer-events: none;
+    animation: confettiFall 3s linear forwards;
+    border-radius: 50%;
+    z-index: 100;
+  }
+
+  @keyframes confettiFall {
+    to {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <!-- Bagian Prank -->
+  <div id="prank-section">
+    <div id="prank-text">Pencet tombol dibawah</div>
+    <button id="prank-btn">klik aku</button>
+  </div>
+
+  <!-- Bagian Gift 3 Detik -->
+  <div id="gift-section">
+    <img src="https://media.tenor.com/ts8zOrh_3egAAAAi/presents-birthday-presents.gif" alt="Gift">
+  </div>
+
+  <!-- Bagian Ucapan -->
+  <div id="ucapan-section">
+    <div class="gif-container">
+      <img src="https://media1.tenor.com/m/ioIItw-T2PMAAAAC/ilyakazakov-cake.gif" alt="Birthday Cake">
+    </div>
+    <div class="typing-container" id="typing-container"></div>
+  </div>
+</div>
+
+<script>
+  const taunts = [
+    'Eits ga kena 😝',
+    'Masih belum kena 🤣',
+    'Tombolnya kabur~',
+    'Hampir dapet 😆',
+    'Sabar dong 😜',
+    'Sedikit lagi ✨',
+    'Ayo fokus 😏',
+    'Satu klik lagi…'
+  ];
+
+  const ucapanLines = [
+    { text: 'Untuk Mutiya', class: 'title' },
+    { text: '' },
+    { text: 'Semoga kamu bahagia, sehat selalu dan semua yang kamu impikan jadi kenyataan' },
+    { text: '' },
+    { text: 'Semoga ditahun ini kamu lebih banyak tawa, lebih sedikit drama dan lebih banyak cerita yang bikin kamu ketawa' },
+    { text: '' },
+    { text: 'Happy Birthday🥳' }
+  ];
+
+  let clickCount = 0;
+  let lastPos = { x: 0, y: 0 };
+  const prankBtn = document.getElementById('prank-btn');
+  const prankText = document.getElementById('prank-text');
+  const prankSection = document.getElementById('prank-section');
+  const giftSection = document.getElementById('gift-section');
+  const ucapanSection = document.getElementById('ucapan-section');
+  const typingContainer = document.getElementById('typing-container');
+
+  function moveButton() {
+    const containerRect = prankSection.getBoundingClientRect();
+    const btnRect = prankBtn.getBoundingClientRect();
+
+    const padding = 15;
+    const maxX = containerRect.width - btnRect.width - padding;
+    const maxY = containerRect.height - btnRect.height - padding - 80;
+
+    let newX, newY;
+    let attempts = 0;
+
+    do {
+      newX = Math.random() * maxX + padding;
+      newY = Math.random() * maxY + 80;
+      attempts++;
+    } while (
+      Math.abs(newX - lastPos.x) < 80 &&
+      Math.abs(newY - lastPos.y) < 80 &&
+      attempts < 10
+    );
+
+    lastPos = { x: newX, y: newY };
+
+    prankBtn.style.left = newX + 'px';
+    prankBtn.style.top = newY + 'px';
+    prankBtn.style.transform = 'translate(0, 0)';
+  }
+
+  function createConfetti() {
+    const colors = ['#FF8FAB', '#FF5CA8', '#FFD6E7', '#FFB3C6'];
+    for (let i = 0; i < 40; i++) {
+      setTimeout(() => {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.animationDelay = Math.random() * 0.5 + 's';
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 3000);
+      }, i * 30);
+    }
+  }
+
+  async function typeText(text, element, speed = 50) {
+    return new Promise(resolve => {
+      let i = 0;
+      const cursor = document.createElement('span');
+      cursor.className = 'cursor';
+      element.appendChild(cursor);
+
+      const interval = setInterval(() => {
+        if (i < text.length) {
+          element.insertBefore(document.createTextNode(text[i]), cursor);
+          i++;
+        } else {
+          clearInterval(interval);
+          setTimeout(() => {
+            cursor.remove();
+            resolve();
+          }, 300);
+        }
+      }, speed);
+    });
+  }
+
+  async function showGiftThenUcapan() {
+    prankSection.style.display = 'none';
+    giftSection.style.display = 'flex';
+
+    await new Promise(r => setTimeout(r, 3000));
+
+    giftSection.style.display = 'none';
+    ucapanSection.style.display = 'block';
+    createConfetti();
+
+    for (const line of ucapanLines) {
+      const div = document.createElement('div');
+      div.className = 'line ' + (line.class || '');
+      typingContainer.appendChild(div);
+      await typeText(line.text, div, line.class === 'title'? 80 : 40);
+      await new Promise(r => setTimeout(r, 200));
+    }
+  }
+
+  prankBtn.addEventListener('click', () => {
+    if (clickCount === 0) {
+      prankBtn.textContent = 'coba lagi';
+      prankText.textContent = taunts[0];
+      clickCount++;
+      moveButton();
+    } else if (clickCount < taunts.length) {
+      prankText.textContent = taunts[clickCount];
+      prankText.style.transform = 'scale(1.1)';
+      setTimeout(() => prankText.style.transform = 'scale(1)', 200);
+      clickCount++;
+      moveButton();
+    } else {
+      showGiftThenUcapan();
+    }
+  });
+
+  prankBtn.addEventListener('mouseenter', () => {
+    if (clickCount > 0 && clickCount < taunts.length) {
+      setTimeout(moveButton, Math.random() * 200);
+    }
+  });
+</script>
+</body>
+</html>
